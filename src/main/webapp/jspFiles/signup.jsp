@@ -53,6 +53,7 @@
             {
             	String insertQuery = "INSERT INTO signup VALUES ('" + email + "','" + pass + "','" + role + "','" + name + "','" + phone + "','"+ genre +"');";
                 statement.executeUpdate(insertQuery);
+                
                 response.getWriter().println("success");
             }
           

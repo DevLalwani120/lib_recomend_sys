@@ -130,9 +130,7 @@
 	
 	String otpString = otp.toString();
 	
-	System.out.println("oldotpofforgotjsp"+otpString);
 	
-	System.out.println("Generated OTP: " + otpString);
 	
         MimeMessage message = new MimeMessage(Session);
         

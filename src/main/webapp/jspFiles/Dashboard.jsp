@@ -13,7 +13,7 @@
     Connection connection = null;
     
     String mail = (String) session.getAttribute("email");
-    System.out.println(mail);
+   
     
     Statement statement = null;
 try {
@@ -30,10 +30,10 @@ try {
     JSONObject userData = new JSONObject();
     if (resultSet.next()) {
         String selectedGenre = resultSet.getString("genre");
-        System.out.println(selectedGenre);
+        
         
         userData.put("genre", selectedGenre);
-        System.out.println(userData);
+        
     }
 
     // Set response type to JSON

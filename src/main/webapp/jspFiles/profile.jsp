@@ -10,6 +10,7 @@ String connect = "com.mysql.cj.jdbc.Driver";
 Connection connection = null;
 Statement statement = null;
 String mail = (String) session.getAttribute("email");
+System.out.println("profile session:"+mail);
 
 try {
     Class.forName(connect);

@@ -11,7 +11,7 @@ $(document).ready(function() {
         let chckName=namePattern.test(name);
        let emailPattern = /^[\w]+@([\w-]+\.)+[\w-]{2,4}$/;
 let chckemail = emailPattern.test(email);
-
+sessionStorage.setItem('mail', email);
 console.log(chckemail)
 
         console.log("name" + name);
@@ -71,6 +71,13 @@ if (Role === null) {
             });
             return; // Exit the function early if passwords do not match
         }
+        if (Role === "librarian") {
+            Swal.fire({
+                title: "Coming Soon",
+                icon: "info"
+            });
+            return; // Exit the function early if passwords do not match
+        }
         $.ajax({
             type: "POST",
             url: "../jspFiles/signup.jsp",
@@ -90,11 +97,11 @@ if (Role === null) {
                 if (Success === "success") {
                     Swal.fire({
                         title: "Signup Successsfully",
-                        text: "Redirecting to Login Page....",
+                        text: "Redirecting to  Email Verification Page....",
                         icon: "success"
                     }).then(function() {
                         // Redirect to the login page
-                        window.location.href = "../htmlFiles/Login.html";
+                        window.location.href = "../htmlFiles/verifyEmail.html";
                     });
                 } else {
                     Swal.fire({

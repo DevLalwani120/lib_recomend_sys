@@ -1,20 +1,28 @@
 $(document).ready(function() {
-	$("#sendOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed");
+	$("#sendOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed").css("color","white");
 	
 	$("#mail").on("input", function() {
         if ($(this).val().trim() !== "") {
-            $("#sendOTP").prop("disabled", false).css("background-color", "#8b4513").css("cursor", "pointer");
+            $("#sendOTP").prop("disabled", false).css("background-color", "#002766").css("cursor", "pointer").css("color","#F5BD8A").hover(function() {
+        $(this).css("background-color", "#003d99");
+    }, function() {
+        $(this).css("background-color", "#002766");
+    });
         } else {
-            $("#sendOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed");
+            $("#sendOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed").css("color","white");;
         }
     });
-	$("#verifyOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed");
+	$("#verifyOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed").css("color","white");
 	
 	$("#otp").on("input", function() {
         if ($(this).val().trim() !== "") {
-            $("#verifyOTP").prop("disabled", false).css("background-color", "#8b4513").css("cursor", "pointer");
+            $("#verifyOTP").prop("disabled", false).css("background-color", "#002766").css("cursor", "pointer").css("color","#F5BD8A").hover(function() {
+        $(this).css("background-color", "#003d99");
+    }, function() {
+        $(this).css("background-color", "#002766");
+    });
         } else {
-            $("#verifyOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed");
+            $("#verifyOTP").prop("disabled", true).css("background-color", "#666").css("cursor", "not-allowed").css("color","white");
         }
     });
 	
@@ -45,7 +53,7 @@ $(document).ready(function() {
                 }
             	else{
             	Swal.fire({
-            		  title: "OTP Sent SuccessFully",
+            		  title: "OTP Sent Successfully",
             		  icon: "success"
             		}).then(()=>
             		{
