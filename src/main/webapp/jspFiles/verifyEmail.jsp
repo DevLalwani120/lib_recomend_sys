@@ -5,7 +5,7 @@
 	<html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Email verification</title>
 	</head>
 	<body><% 
 	
@@ -13,7 +13,7 @@
 	
 	String enteredOTP = request.getParameter("otp");
 	
-	System.out.println("enteredOTP"+enteredOTP);
+
 	
 	String url = "jdbc:mysql://localhost:3306/lib_recommend_sys";
 	
@@ -89,9 +89,7 @@
 						
 				String data_pass = resultSet.getString("password");
 				
-				System.out.println("Email from database: "+data_email);
-				
-				System.out.println("password from database: "+data_pass);
+		
 				
 						// Output retrieved data to the web page
 				data_password=data_pass;
@@ -100,7 +98,7 @@
 				
 				String otp = (String) session.getAttribute("OTP");
 				
-				System.out.println("otpgetfromforgotjsp"+otp);
+			
 				
 				String backupotp=otp;
 				
@@ -108,27 +106,14 @@
 					
 			        // Send password if OTP is correct
 			        
-			        MimeMessage passwordMessage = new MimeMessage(Session);
-			        
-			        passwordMessage.setFrom(new InternetAddress(from));
-			        
-			        passwordMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-			        
-			        passwordMessage.setSubject("Password");
-			        
-			        passwordMessage.setText("Your password for " + recipient + " is " + data_password);
-			        		
-			        // Send password message
-			        Transport.send(passwordMessage);
-			        		
-			        		
+		
 			    } else {
 			        // Send response if OTP is incorrect
 			    	response.getWriter().println("IncorrectOTP");
 			    }
 				// Create a default MimeMessage object
 				
-					} catch (MessagingException mex) {
+					} catch (Exception mex) {
 						
 					    mex.printStackTrace();	    
 					}

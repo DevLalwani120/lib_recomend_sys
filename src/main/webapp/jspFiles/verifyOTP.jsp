@@ -5,15 +5,14 @@
 	<html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>password verification</title>
 	</head>
 	<body><% 
 	
 	String recipient = request.getParameter("mail");
 	
 	String enteredOTP = request.getParameter("otp");
-	
-	System.out.println("enteredOTP"+enteredOTP);
+
 	
 	String url = "jdbc:mysql://localhost:3306/lib_recommend_sys";
 	
@@ -89,9 +88,7 @@
 						
 				String data_pass = resultSet.getString("password");
 				
-				System.out.println("Email from database: "+data_email);
-				
-				System.out.println("password from database: "+data_pass);
+
 				
 						// Output retrieved data to the web page
 				data_password=data_pass;
@@ -99,8 +96,7 @@
 				}
 				
 				String otp = (String) session.getAttribute("OTP");
-				
-				System.out.println("otpgetfromforgotjsp"+otp);
+			
 				
 				String backupotp=otp;
 				

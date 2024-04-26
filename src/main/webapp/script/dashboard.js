@@ -3,7 +3,7 @@
   $(document).ready(function() {
     let email = sessionStorage.getItem("mail"); 
     let emailFirst = email.split('@');
-    console.log(emailFirst[0]);
+
     
     $('#logoutLink').click(function(event) {
         // Prevent default link behavior

@@ -55,6 +55,7 @@ $(document).ready(function() {
         $("#submitbtn").prop("disabled", false).css("cursor", "pointer");
          
     });
+    
 
     $("#submitbtn").click(function(event) {
         let name = $('#name').val();

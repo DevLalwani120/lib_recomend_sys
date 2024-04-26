@@ -25,7 +25,6 @@
     
     String mail = (String) session.getAttribute("email");
     
-    System.out.print("Session stored email : "+mail);
     
     try {
         

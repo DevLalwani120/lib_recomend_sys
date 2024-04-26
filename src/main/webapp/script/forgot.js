@@ -34,7 +34,6 @@ $(document).ready(function() {
                         title: "Please Wait ",
                         icon: "success",
                         showConfirmButton: false,
-                        timer: 1500
                     });
         $.ajax({
             type: "POST",
@@ -90,7 +89,6 @@ $("#verifyOTP").click(function(event) {
         title: "Please Wait",
         icon: "success",
         showConfirmButton: false,
-        timer: 1000
     });
     $.ajax({
         type: "POST",
